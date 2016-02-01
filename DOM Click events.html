@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<!--Matyas Fenyves-->
+<html onclick = "moveImage(event) ;">
+	<head>
+		<title>DOM events</title>
+		<style>
+			img
+			{
+				
+			}
+		</style>
+		<script>
+			function induction()
+			{
+				divEl = document.getElementById("divID") ;
+				divEl2 = document.getElementById("divID2") ;
+				divEl3 = document.getElementById("divID3") ;
+				divEl4 = document.getElementById("divID4") ;
+			}
+			function imageclicked(e)
+			{
+				//e.preventDefault() ;
+				//divEl.innerHTML = e.clientX ;
+				//divEl2.innerHTML = e.clientY ;
+				//divEl3.innerHTML = e.button ;
+				//divEl4.innerHTML = e.which ;
+			}
+			
+			function moveImage(e)
+			{
+				if(e.shiftKey)
+				{
+					theIMG.style.display = "none" ;
+				}
+				X = e.clientX ;
+				Y = e.clientY ;
+				theIMG = document.getElementById("pic") ;
+				theIMG.style.position = "fixed" ;
+				theIMG.style.top = Y + "px" ;
+				theIMG.style.left = X + "px" ;
+			}
+		</script>
+	</head>
+	<body onload = "induction() ;" >
+		<img id = "pic" src = "Dark Souls 2.jpg" onclick = "imageclicked(event) ;" oncontextmenu = "imageclicked(event) ;" />
+		<div id = "divID"></div>
+		<div id = "divID2"></div>
+		<div id = "divID3"></div>
+		<div id = "divID4"></div>
+	</body>
+</html>

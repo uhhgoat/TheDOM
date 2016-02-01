@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<!--Matyas Fenyves-->
+<html>
+	<head>
+		<title>The Window Object</title>
+		<style>
+			
+		</style>
+		<script>
+			function openNewWindow()
+			{
+				var win = window.open("http://ebay.com") ;
+				win.alert("I'm on ebay!") ;
+			}
+			//var timeout = setTimeout("alert('hello')", 5000) ;
+			//var interval = setInterval("alert('hello')", 5000) ;
+			clearTimeout(timeout) ;
+			clearInterval(interval) ;
+			
+		</script>
+	</head>
+	<body>
+		<button onclick = "openNewWindow() ;">hello</button>
+	</body>
+</html>

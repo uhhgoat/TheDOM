@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<!--Matyas Fenyves-->
+<html onkeydown = "checkKeystroke(event) ;">
+	<head>
+		<title>Keyboard Events</title>
+		<style>
+			img
+			{
+				position:fixed ;
+			}
+		</style>
+		<script>
+			function induction()
+			{
+				theDIV = document.getElementById("keystroke") ;
+				theIMG = document.getElementById("img") ;
+				up = 38 ;
+				down = 40 ;
+				left = 37 ;
+				right = 39 ;
+				x = 0 ;
+				y = 0 ;
+			}
+			function checkKeystroke(e)
+			{
+				
+				if(e.which)
+					theDIV.innerHTML = e.which ;
+				else
+					theDIV.innerHTML = e.keyCode ;
+				
+				
+				if(e.which == up || e.keyCode == up)
+				{
+					y -= 5 ;
+					theIMG.style.top = y + "px" ;
+				}
+				if(e.which == down || e.keyCode == down)
+				{
+					y += 5 ;
+					theIMG.style.top = y + "px" ;
+				}
+				if(e.which == left || e.keyCode == left)
+				{
+					x -= 5 ;
+					theIMG.style.left = x + "px" ;
+				}
+				if(e.which == right || e.keyCode == right)
+				{
+					x += 5 ;
+					theIMG.style.left = x + "px" ;
+				}
+			}
+			//enter.keyCode == "13"
+			//space.keyCode == "32"
+			//up.keyCode == "38"
+			//down.keyCode == "40"
+			//left.keyCode == "37"
+			//right.keyCode == "39"
+		</script>
+	</head>
+	<body onload = "induction() ;">
+		<div id = "keystroke"></div>
+		<img id = "img" src = "Dark Souls 2.jpg" />
+	</body>
+</html>
